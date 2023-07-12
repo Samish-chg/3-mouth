@@ -1,0 +1,28 @@
+.move_block {
+    background: black;
+    padding: 100px 0;
+}
+
+.parent_block {
+    height: 900px;
+    width: 100%;
+    border: 2px solid orange;
+    position: relative;
+}
+
+.child_block {
+    position: absolute;
+    width: 99px;
+    height: 96px;
+    background: red;
+    left: 10px;
+}
+.gmail_block {
+    background: black;
+    padding: 100px 0;
+}
+
+.inner_gmail_block {
+    display: flex;
+    flex-direction: column;
+}
