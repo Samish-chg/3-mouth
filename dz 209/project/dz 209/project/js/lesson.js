@@ -141,6 +141,29 @@ btnPrev.onclick = () =>{
 
 cardSwapper(count)
 
+//
+const  cityName=document.querySelector('.cityName')
+const city=document.querySelector(".city")
+const temp=document.querySelector('.temp')
+
+const BASE_URL= 'http://api.openweathermap.org/data/2.5/weather'
+const apiKey='e417df62e04d3b1b111abeab19cea714'
+
+cityName.oninput = async () => {
+    try {
+        const response = await fetch(`${BASE_URL}?q=${cityName.value}&appid=${apiKey}`)
+        const data = await response.json()
+        city.innerHTML= data?.name || 'City is not fined...'
+        temp.innerHTML=  data?.main?.temp ? Math.round(data.main.temp - 274):'...'
+    } catch (errorName) {
+        console.warn('ERROR: ', errorName)
+    }
+}
+// console.warn('Warning')
+
+
+
+
 
 
 
